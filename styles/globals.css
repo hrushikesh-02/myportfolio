@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Major+Mono+Display&family=Poppins:wght@200&family=Quicksand&family=Sedgwick+Ave+Display&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +11,22 @@
   --txtclr1: #050505;
   --btn: rgb(48, 97, 175);
   --btn: #dddbcb;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+}
+
+.myname {
+  font-family: "Comfortaa", cursive;
+  font-family: "Major Mono Display", monospace;
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Sedgwick Ave Display", cursive; */
+  /* font-family: "Quicksand", sans-serif; */
+  /* letter-spacing: 5px; */
+  font-weight: 100;
 }
 
 ::-webkit-scrollbar {
@@ -38,12 +55,30 @@
   grid-area: sk7;
 }
 
+.sk8 {
+  grid-area: sk8;
+}
+
+.sk9 {
+  grid-area: sk9;
+}
+.sk10 {
+  grid-area: sk10;
+}
+
+.sk11 {
+  grid-area: sk11;
+}
+
+.sk12 {
+  grid-area: sk12;
+}
+
 .grid-container {
   grid-template-areas:
-    "sk1 sk1 sk2 sk3"
-    "sk4 sk5 sk2 sk3"
-    "sk6 sk6 sk2 sk7";
-}
-.c {
-  grid-area: sss;
+    "sk2 sk2 sk1 sk3"
+    "sk9 sk5 sk1 sk3"
+    "sk10 sk10 sk1 sk8"
+    "sk4 sk6 sk11 sk11"
+    "sk4 sk6 sk7 sk12";
 }
