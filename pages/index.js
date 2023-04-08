@@ -29,35 +29,44 @@ import dbicon from "../public/resources/dbicon2.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
-
+import { Opacity } from "@mui/icons-material";
 export default function Home() {
   useEffect(() => {
     AOS.init();
   }, []);
 
+  const [confirmVariable, setConfirmVariable] = useState(0);
+  const [show, setshow] = useState(0);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    console.log(confirmVariable);
+    setshow(1);
+    setTimeout(() => {
+      setshow(0);
+    }, 3000);
+    setConfirmVariable(confirmVariable + 1);
+    if (confirmVariable < 2) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            console.log("Message has been sent successfully!");
+          },
+          (error) => {
+            console.log("An error has occoured!");
+          }
+        );
+    }
   };
 
   return (
@@ -385,16 +394,11 @@ export default function Home() {
               className="bg-[color:var(--clr2)] mt-7 rounded-xl p-5 shadow-lg"
             >
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                Contact Me
+                Contact me
               </h2>
               <section className="bg-white dark:bg-gray-900 rounded-xl">
                 <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                  <form
-                    // action="#"
-                    className="space-y-8"
-                    onSubmit={sendEmail}
-                    ref={form}
-                  >
+                  <form className="space-y-8" onSubmit={sendEmail} ref={form}>
                     <div>
                       <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                         Your email
@@ -432,13 +436,14 @@ export default function Home() {
                     </div>
                     <button
                       type="submit"
-                      onClick={() => {
-                        console.log("send message was clicked");
-                      }}
-                      className="inline-block rounded bg-[color:var(--btn)] px-6 pt-2.5 pb-2 text-m font-medium leading-normal shadow-[0_4px_9px_-4px_#f5efd9] transition duration-150 ease-in-out hover:bg-[color:var(--btn)] hover:shadow-[0_8px_9px_-4px_rgba(159,113,102,0.3),0_4px_18px_0_rgba(159,113,102,0.2)]"
+                      className="inline-block rounded bg-[color:var(--btn)] px-6 py-2 text-m font-medium leading-normal shadow-[0_4px_9px_-4px_#f5efd9] transition duration-150 ease-in-out hover:bg-[color:var(--btn)] hover:shadow-[0_8px_9px_-4px_rgba(159,113,102,0.3),0_4px_18px_0_rgba(159,113,102,0.2)]"
                     >
                       Send message
                     </button>
+                    <div>
+                      {confirmVariable <= 2 && show == 1 ? "Message sent!" : ""}
+                      {confirmVariable > 2 && show == 1 ? "Limit Exceeded" : ""}
+                    </div>
                   </form>
                 </div>
               </section>
