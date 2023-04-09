@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 const AchievementCard = (props) => {
   return (
-    <div className="w-[100%]  mt-7 flex flex-col md:flex-row">
+    <div className="w-[100%]  mt-7 flex flex-col md:flex-row pop rounded-xl">
       <div className="rounded-[10px_10px_0px_0px] md:rounded-[10px_0px_0px_10px] overflow-hidden relative bg-white flex justify-center items-center p-5">
         {props.img}
       </div>

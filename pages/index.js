@@ -26,6 +26,8 @@ import nodejsicon from "../public/resources/nodejsicon.svg";
 import cicon from "../public/resources/cicon.svg";
 import pythonicon from "../public/resources/pythonicon.svg";
 import dbicon from "../public/resources/dbicon2.png";
+import linkedinicon from "../public/resources/linkedinicon.svg";
+import gmailicon from "../public/resources/gmailicon.svg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -38,37 +40,6 @@ export default function Home() {
     AOS.init();
   }, []);
 
-  const [confirmVariable, setConfirmVariable] = useState(0);
-  const [show, setshow] = useState(0);
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log(confirmVariable);
-    setshow(1);
-    setTimeout(() => {
-      setshow(0);
-    }, 3000);
-    setConfirmVariable(confirmVariable + 1);
-    if (confirmVariable < 2) {
-      emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_SERVICE_ID,
-          process.env.NEXT_PUBLIC_TEMPLATE_ID,
-          form.current,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY
-        )
-        .then(
-          (result) => {
-            console.log("Message has been sent successfully!");
-          },
-          (error) => {
-            console.log("An error has occoured!");
-          }
-        );
-    }
-  };
-
   return (
     <>
       <Head>
@@ -78,13 +49,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-[color:var(--clr0)] md:p-5 flex items-center justify-center text-[color:var(--txtclr1)]">
+        <div className="md:p-5 flex flex-col items-center justify-center text-[color:var(--txtclr1)] background ">
           <div className="p-5 max-w-[1000px] rounded-xl ">
-            <div className="mt-1 flex items-center justify-center text-5xl md:text-7xl p-1 myname">
+            <div className="mt-1 flex items-center justify-center text-5xl md:text-7xl p-1 md:tracking-[15px] ">
               HRUSHIKESH PATEL
             </div>
 
-            <div className="bg-[color:var(--clr2)]  mt-7 rounded-xl p-5 ">
+            <div className=" mt-[4rem] rounded-xl p-5 border stylize">
               <h className="text-4xl ">My work</h>
               <div className="grid md:grid-cols-[repeat(_auto-fit,minmax(250px,1fr)_)] gap-5 mt-5 ">
                 <Card
@@ -128,7 +99,7 @@ export default function Home() {
             <div
               data-aos="fade-in"
               data-aos-duration="1000"
-              className="bg-[color:var(--clr2)] mt-7  rounded-xl p-5 shadow-lg"
+              className=" mt-[4rem]  rounded-xl p-5 border stylize"
             >
               <h className="text-4xl">Education</h>
               <ol className="ml-2 relative border-l border-black dark:border-gray-700 mt-5">
@@ -153,7 +124,7 @@ export default function Home() {
             <div
               data-aos="fade-in"
               data-aos-duration="1000"
-              className="bg-[color:var(--clr2)] mt-7 rounded-xl p-5 shadow-lg"
+              className=" mt-[4rem] rounded-xl p-5 border stylize"
             >
               <h className="text-4xl">Achievements</h>
               <AchievementCard
@@ -203,7 +174,7 @@ export default function Home() {
             <div
               data-aos="fade-in"
               data-aos-duration="1000"
-              className="bg-[color:var(--clr2)] mt-7 rounded-xl p-5 shadow-lg"
+              className=" mt-[4rem] rounded-xl p-5 border stylize"
             >
               <h className="text-4xl">Skills</h>
               <div className="flex flex-col md:grid grid-container gap-5 mt-5">
@@ -334,7 +305,7 @@ export default function Home() {
             <div
               data-aos="fade-in"
               data-aos-duration="1000"
-              className="bg-[color:var(--clr2)] mt-7 rounded-xl p-5 shadow-lg"
+              className=" mt-[4rem] rounded-xl p-5 border stylize"
             >
               <h className="text-4xl">Related Links</h>
               <div className="grid grid-cols-[repeat(_auto-fit,minmax(100px,1fr)_)] gap-5 mt-5 ">
@@ -369,7 +340,7 @@ export default function Home() {
             <div
               data-aos="fade-in"
               data-aos-duration="1000"
-              className="bg-[color:var(--clr2)] mt-7 rounded-xl p-5 shadow-lg"
+              className=" mt-[4rem] rounded-xl p-5 border stylize"
             >
               <h className="text-4xl">Certifications</h>
               <div className="grid grid-cols-[repeat(_auto-fit,minmax(200px,1fr)_)] gap-5 mt-5">
@@ -387,69 +358,26 @@ export default function Home() {
                 />
               </div>
             </div>
-
-            <div
-              data-aos="fade-in"
-              data-aos-duration="1000"
-              className="bg-[color:var(--clr2)] mt-7 rounded-xl p-5 shadow-lg"
-            >
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                Contact me
-              </h2>
-              <section className="bg-white dark:bg-gray-900 rounded-xl">
-                <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                  <form className="space-y-8" onSubmit={sendEmail} ref={form}>
-                    <div>
-                      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                        Your email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        name="user_name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                        Subject
-                      </label>
-                      <input
-                        name="subject"
-                        type="text"
-                        id="subject"
-                        className="block p-3 w-full text-m text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        required
-                      />
-                    </div>
-                    <div className="sm:col-span-2">
-                      <label className="block mb-2 text-m font-medium text-gray-900 dark:text-gray-400">
-                        Your message
-                      </label>
-                      <textarea
-                        id="message"
-                        rows="6"
-                        name="message"
-                        className="block p-2.5 w-full text-m text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      className="inline-block rounded bg-[color:var(--btn)] px-6 py-2 text-m font-medium leading-normal shadow-[0_4px_9px_-4px_#f5efd9] transition duration-150 ease-in-out hover:bg-[color:var(--btn)] hover:shadow-[0_8px_9px_-4px_rgba(159,113,102,0.3),0_4px_18px_0_rgba(159,113,102,0.2)]"
-                    >
-                      Send message
-                    </button>
-                    <div>
-                      {confirmVariable <= 2 && show == 1 ? "Message sent!" : ""}
-                      {confirmVariable > 2 && show == 1 ? "Limit Exceeded" : ""}
-                    </div>
-                  </form>
-                </div>
-              </section>
-            </div>
           </div>
         </div>
+        <footer className=" w-[100%] flex flex-col items-center text-neutral-500 bg-yellow-200 ">
+          <div className="w-[100%] p-5 flex flex-col items-center stylize">
+            <div className="p3  flex flex-col items-center">
+              <div className="flex items-center mt-2 gap-1">
+                <div>hrushikesh592002@gmail.com</div>
+              </div>
+              <div
+                className="flex items-center mt-2 gap-1"
+                onClick={() => {
+                  window.open();
+                }}
+              >
+                <div> Lets Connect!</div>
+              </div>
+            </div>
+            <div className="p3 text-sm mt-2">COPYRIGHT © Hrushikesh Patel</div>
+          </div>
+        </footer>
       </main>
     </>
   );

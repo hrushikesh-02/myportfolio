@@ -2,14 +2,12 @@ import React from "react";
 const Card = (props) => {
   return (
     <div className="flex justify-center">
-      <div className="block w-[100%] rounded-lg bg-white shadow-lg dark:bg-neutral-700 overflow-hidden">
+      <div className="block w-[100%] rounded-lg  overflow-hidden pop">
         <div className="p-6">
-          <h5 className="mb-2 text-xl leading-tight text-neutral-800 dark:text-neutral-50 font-bold">
+          <h5 className="mb-2 text-xl leading-tight text-neutral-900  font-bold">
             {props.title}
           </h5>
-          <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-            {props.content}
-          </p>
+          <p className="mb-4 text-base text-neutral-500 ">{props.content}</p>
           <button
             onClick={() => {
               window.open(props.link);

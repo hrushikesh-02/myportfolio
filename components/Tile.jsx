@@ -3,7 +3,7 @@ import React from "react";
 const Tile = (props) => {
   return (
     <div
-      className=" bg-[color:var(--clr3)]  rounded-xl p-2 flex flex-col items-center shadow-lg"
+      className="   rounded-xl p-2 flex flex-col items-center border pop bg-white"
       onClick={() => {
         window.open(props.link);
       }}
