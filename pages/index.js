@@ -261,7 +261,7 @@ export default function Home() {
                     icon={
                       <Image src={html5icon} height={69} width={69} alt="alt" />
                     }
-                    title="HTML5"
+                    title="HTML"
                   />
                 </div>
                 <div className="sk4">
