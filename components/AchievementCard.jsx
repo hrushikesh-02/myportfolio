@@ -13,7 +13,7 @@ const AchievementCard = (props) => {
           onClick={() => {
             window.open(props.link);
           }}
-          className="mt-3 inline-block rounded bg-[color:var(--btn)] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#f5efd9] transition duration-150 ease-in-out hover:bg-[color:var(--btn)] hover:shadow-[0_8px_9px_-4px_rgba(159,113,102,0.3),0_4px_18px_0_rgba(159,113,102,0.2)]"
+          className="mt-3"
         >
           Visit
         </button>
