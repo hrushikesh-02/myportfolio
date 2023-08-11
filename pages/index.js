@@ -89,10 +89,25 @@ export default function Home() {
               <h className="text-4xl ">About me</h>
               <p className="mt-5 tracking-[1px]">Hi,</p>
               <p className="mt-2 tracking-[1px]">
-                I am an software developer with a record of delivering
-                innovative solutions. With good experience in libraries like
-                ReactJs and NextJs, I am also proficient in several other
-                programming languages such as C++, C, Python.
+                Greetings, I am an accomplished software developer known for
+                consistently delivering cutting-edge solutions. My expertise
+                lies in utilizing prominent libraries like ReactJs and NextJs,
+                while also demonstrating proficiency in a wide array of
+                programming languages such as C++, C, and Python.
+              </p>
+
+              <p className="mt-2 tracking-[1px]">
+                Throughout my academic journey at SRMIST-Chennai, I have honed
+                my skills and knowledge in computer science engineering,
+                preparing myself to tackle complex challenges in the software
+                development domain. My GitHub portfolio showcases a diverse
+                range of projects, reflecting my dedication to exploring
+                innovative approaches to problem-solving.
+              </p>
+              <p className="mt-2 tracking-[1px]">
+                Thank you for taking the time to review my portfolio. I welcome
+                any feedback or queries and am excited to explore potential
+                collaborations and opportunities.
               </p>
             </div>
 
@@ -104,8 +119,8 @@ export default function Home() {
               <div className="grid md:grid-cols-[repeat(_auto-fit,minmax(250px,1fr)_)] gap-5 mt-5 ">
                 <Card
                   title="Amazon Clone"
-                  content="I have building this clone site to practice redux. It is a multi page React application that uses MUI for a few of its key components. It demonstrates the uses of react router and redux toolkit"
-                  link="https://github.com/hrushikesh-02/AmazonClone"
+                  content="This website showcases streamlined use of redux state management. MUI facilitates some aspects of this multi-page website."
+                  link="https://hrushikesh-02.github.io/AmazonClone/"
                 />
                 <Card
                   title="Ecomm-Store"
@@ -114,17 +129,18 @@ export default function Home() {
                 />
                 <Card
                   title="Resumifi"
-                  content="Resumifi is a resume building site made using ReactJs. Resumifi allows one to create a simple resume with ease."
+                  contents="Resumifi is a resume building site made using ReactJs. Resumifi allows one to create a simple resume with ease."
+                  content="Made using ReactJs, Resumifi aids people in curating their resumes according to their personal interests."
                   link="https://hrushikesh-02.github.io/resumifi/"
                 />
                 <Card
                   title="GPA Calculator"
-                  content="GPA Calculator is used to calculate the CPA based on grade and credit. The app has been used over 65K by user from our university!"
+                  content="GPA Calculator is used to calculate the CGPA based on grades and credits. The app has been used by over 65K users from our university!"
                   link="https://gpacal.live/"
                 />
                 <Card
                   title="Weather App"
-                  content="Weather app is aesthetic responsive web app for checking the weather of any city. It uses Open-weather API for fetching input related data."
+                  content="Weather app is an aesthetic and responsive web app for checking the weather of any city. It uses Open-weather API for fetching input related data."
                   link="https://hrushikesh-02.github.io/weatherapp/"
                 />
                 <Card
@@ -134,7 +150,8 @@ export default function Home() {
                 />
                 <Card
                   title="Todo App"
-                  content="It is a basic version of task manager which has basic animation and only local storage for its data storage."
+                  contents="It is a basic version of task manager which has basic animation and only local storage for its data storage."
+                  content="This application allows basic functionalities of a regular task manager and uses local storage to store data."
                   link="https://hrushikesh-02.github.io/todoApp/"
                 />
                 <Card
