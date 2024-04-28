@@ -136,7 +136,7 @@ export default function Home() {
                 <Card
                   title="GPA Calculator"
                   content="GPA Calculator is used to calculate the CGPA based on grades and credits. The app has been used by over 65K users from our university!"
-                  link="https://gpacal.live/"
+                  link="https://hrushikesh-02.github.io/GPAcalculator/"
                 />
                 <Card
                   title="Weather App"
